@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Practice 3 – Password Verification</title>
+</head>
+<body>
+  <h2>Practice 3: JavaScript Password Verification</h2>
+
+  <label>
+    Enter password:
+    <input id="p1" type="password" />
+  </label>
+  <br>
+  <label>
+    Re-enter password:
+    <input id="p2" type="password" />
+  </label>
+  <br><br>
+  <button id="check">Verify</button>
+
+  <script>
+    document.getElementById('check').addEventListener('click', function () {
+      const p1 = document.getElementById('p1').value;
+      const p2 = document.getElementById('p2').value;
+
+      if (p1.length < 8 || p2.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        return;
+      }
+      if (p1 !== p2) {
+        alert('Passwords do not match.');
+        return;
+      }
+      alert('Passwords match!');
+    });
+  </script>
+</body>
+</html>
